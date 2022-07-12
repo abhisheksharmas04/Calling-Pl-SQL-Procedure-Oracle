@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class MatrimonyServiceImp implements IMatrimonyServiceManagement {
 	@Override
 	public String registerMarriageSeeker(MarrigeSeeker seeker) {
 		return "Marriage sekker info is saved with id values: " + msRepo.save(seeker).getId();
+	}
+
+	@Override
+	public Optional<MarrigeSeeker> searchSeekerById(Long id) {
+		return msRepo.findById(id);
 	}
 
 }
