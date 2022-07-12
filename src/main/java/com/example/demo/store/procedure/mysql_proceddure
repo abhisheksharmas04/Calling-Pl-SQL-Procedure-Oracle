@@ -1,4 +1,0 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GET_EMP_DETAILS_BY_DESG`(IN desg1 varchar(10), IN desg2 varchar(10))
-BEGIN
-	select empno, ename, job, sal from emp where job in(desg1, desg2) order by job;
-END
