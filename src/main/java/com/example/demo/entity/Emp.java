@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,27 +17,20 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@Table(name = "CORONA_VACCINE_TAB") :- Optional if we want to take db table name same as entity class name.
-public class CoronaVaccine implements Serializable {
+@Table(name = "emp")
+public class Emp implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id 
-	@Column(name = "regNo")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long regNo;
+	private Long empno;
 
-	@Column(name = "name", length = 20)
-	private String name;
+	private String ename;
 
-	@Column(name = "company", length = 20)
-	private String company;
+	private String job;
 
-	@Column(name = "country", length = 20)
-	private String country;
+	private Double sal;
 
-	private Double price;
-
-	private Integer requiredDosesCount;
 
 }
